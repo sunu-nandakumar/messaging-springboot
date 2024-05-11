@@ -2,7 +2,7 @@ spring:
   application:
     name: messaging
   datasource:
-    url: jdbc:mysql://localhost:3306/messaging
+    url: jdbc:mysql://localhost:3306/new_messaging?createDatabaseIfNotExist=true
     username: root
     password: root
     driver-class-name: com.mysql.cj.jdbc.Driver
