@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "e97c340d-c72c-4c4d-8a69-378f3a8fce56",
+		"name": "messaging",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17144388"
+	},
+	"item": [
+		{
+			"name": "fetch-topics",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}8080/queue/topics",
+					"host": [
+						"{{LOCALHOST}}8080"
+					],
+					"path": [
+						"queue",
+						"topics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addData(producer)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topicName\": \"generalNews\",\r\n    \"data\": \"sample data\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}8080/queue/addData",
+					"host": [
+						"{{LOCALHOST}}8080"
+					],
+					"path": [
+						"queue",
+						"addData"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "subscribeToTopic(consumer)",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topicName\": \"techNews\",\r\n    \"consumerId\": \"7ad24a4a-d339-45f5-bcf0-8d88ee8e81c8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}8080/queue/subscribeToTopic",
+					"host": [
+						"{{LOCALHOST}}8080"
+					],
+					"path": [
+						"queue",
+						"subscribeToTopic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fetchDataFromTopic",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"topicName\": \"techNews\",\r\n    \"consumerId\": \"7ad24a4a-d339-45f5-bcf0-8d88ee8e81c8\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{LOCALHOST}}8080/queue/fetchDataForTopic",
+					"host": [
+						"{{LOCALHOST}}8080"
+					],
+					"path": [
+						"queue",
+						"fetchDataForTopic"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
