@@ -19,8 +19,6 @@ import java.util.stream.Stream;
 @Service
 @Slf4j
 public class ManagedQueueService {
-
-
     @Autowired
     private TopicRepo topicRepo;
     @Autowired
